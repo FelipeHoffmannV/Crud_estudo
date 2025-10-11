@@ -16,6 +16,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
 
   <body>
@@ -45,7 +46,7 @@
           <input
             class="btn btn-primary"
             style="width: 200px; margin-top: 25px"
-            type="submit"
+            type="submit" value="Add User"
           />
         </div>
       </form>
@@ -62,9 +63,12 @@
           <tbody>
               {% for user in users %}
             <tr>
-                <td>{{user.id}}</td>
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
+              <td>{{ user['id'] }}</td>
+              <td>{{ user['name'] }}</td>
+              <td>{{ user['email'] }}</td>
+              <td><a class="btn btn-danger" style="width: 50px;" href="{{ url_for('user_route.remove_user', id=user.id ) }}"><i class="fa-solid fa-trash"></i></a>
+                  <a href="/edit" class="btn btn-primary" style="width: 50px;"><i class="fa-solid fa-user-pen"></i></a>
+              </td>
             </tr>
                 {% endfor %}
           </tbody>
