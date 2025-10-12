@@ -1,68 +1,101 @@
-# Crud_estudo
+# 🧩 CRUD Flask - Banco de Dados Fictício  
 
-Este projeto é um CRUD simples desenvolvido para fins de estudo, utilizando o framework Flask em Python.
+Este projeto foi desenvolvido com o objetivo de **praticar os conceitos fundamentais de CRUD (Create, Read, Update, Delete)** usando o **framework Flask** em Python.  
 
-## Objetivo
+O sistema permite **cadastrar, listar, editar e remover usuários**, armazenando os dados em um **banco de dados fictício** baseado em **listas e dicionários**, sem o uso de um banco real.  
 
-O objetivo principal deste projeto é praticar e aprender conceitos de desenvolvimento web, rotas, templates e manipulação de dados em Python com Flask.
+---
 
-## Banco de Dados
+## 🚀 Funcionalidades
 
-No momento, o projeto utiliza um banco de dados fake, implementado com listas e dicionários em memória para simular o armazenamento de usuários. Os dados não são persistidos após o encerramento da aplicação.
+- ✅ Adicionar novos usuários  
+- 📋 Listar usuários cadastrados  
+- ✏️ Editar nome e e-mail de um usuário específico  
+- 🗑️ Remover usuários da lista  
+- 🧠 Simulação de banco de dados com listas e dicionários  
+- 🧪 Testes automatizados com Pytest (incluindo delays visuais)
 
-O arquivo [`database/fic_data.py`](database/fic_data.py) contém a lista de usuários utilizada como banco de dados fake.
+---
 
-## Estrutura do Projeto
+## 🧱 Tecnologias utilizadas
 
-A estrutura do projeto é a seguinte:
+- [Python 3.12](https://www.python.org/)
+- [Flask](https://flask.palletsprojects.com/)
+- [Bootstrap 5](https://getbootstrap.com/)
+- [Font Awesome](https://fontawesome.com/)
+- [Pytest](https://docs.pytest.org/en/latest/)
 
-```
-crud_estudo/
+---
+
+## 📂 Estrutura do projeto
+
+
+Crud_estudo/
 │
-├── app.py               # Arquivo principal da aplicação Flask
-├── database/             # Pasta contendo arquivos relacionados ao banco de dados
-│   └── fic_data.py      # Arquivo com a "base de dados" fake (listas e dicionários)
-│
-├── templates/           # Pasta contendo os templates HTML
-│   ├── base.html        # Template base com o cabeçalho e rodapé comuns
-│   ├── index.html       # Página inicial
-│   ├── create.html      # Página para criar um novo usuário
-│   ├── read.html        # Página para exibir detalhes de um usuário
-│   ├── update.html      # Página para editar um usuário existente
-│   └── delete.html      # Página para confirmar a exclusão de um usuário
-│
-└── static/              # Pasta para arquivos estáticos (CSS, JavaScript, imagens)
-    └── style.css        # Arquivo de estilo CSS
-```
+├── app.py # Arquivo principal do Flask
+├── database/
+│ └── fic_data.py # "Banco de dados" fictício
+├── templates/
+│ └── index.html # Página principal
+├── static/
+│ └── javaScript.js # Script de apoio (edição, interação etc.)
+├── tests/
+│ └── test_user_crud.py # Testes automatizados do CRUD
+├── README.md
+└── requirements.txt
 
-## Como Executar o Projeto
+---
 
-Para executar o projeto em sua máquina, siga os passos abaixo:
+## ⚙️ Como rodar o projeto localmente
 
-1. Certifique-se de ter o Python 3.x instalado.
-2. Clone este repositório para sua máquina.
-3. Navegue até a pasta do projeto no terminal.
-4. Instale as dependências necessárias com o comando: `pip install -r requirements.txt`
-5. Execute o arquivo `app.py` com o comando: `python app.py`
-6. Abra o navegador e acesse `http://127.0.0.1:5000/`
+### 
 
-## Funcionalidades
+1️⃣ Clonar o repositório
 
-As principais funcionalidades deste CRUD incluem:
+```bash
+git clone https://github.com/SEU_USUARIO/crud-flask-usuarios.git
+cd crud-flask-usuarios
 
-- Criar um novo usuário (Create)
-- Ler e exibir detalhes de um usuário (Read)
-- Atualizar as informações de um usuário existente (Update)
-- Excluir um usuário (Delete)
+2️⃣ Criar e ativar um ambiente virtual
+python -m venv venv
+source venv/bin/activate   # Linux ou Mac
+venv\Scripts\activate      # Windows
 
-## Tecnologias Utilizadas
+3️⃣ Instalar as dependências
+pip install -r requirements.txt
 
-As principais tecnologias e ferramentas utilizadas no desenvolvimento deste projeto são:
-
-- Python 3.x
-- Flask
-- HTML
-- CSS/BootStrap 5
+4️⃣ Rodar o servidor Flask
+python app.py
 
 
+Acesse no navegador:
+👉 http://127.0.0.1:5000/
 
+🧪 Rodando os testes
+
+Para rodar os testes automatizados (com delays visuais):
+
+pytest -s -v
+
+
+Saída esperada:
+
+🧩 Adding user...
+✅ User added successfully!
+🔄 Updating user...
+✅ Update complete!
+🗑️ Removing user...
+✅ All tests passed!
+
+💡 Sobre o projeto
+
+Este projeto tem fins educacionais e foi criado para praticar a lógica de back-end com Flask antes de trabalhar com bancos reais como SQLite ou PostgreSQL.
+
+
+📜 Licença
+
+Este projeto é livre para estudo, modificação e uso pessoal.
+Sinta-se à vontade para usar como base para seus próprios aprendizados!
+
+💻 Desenvolvido por Felipe Hoffmann
+📬 [https://www.linkedin.com/in/felipe-hoffmann-viana-8898b6329/]
