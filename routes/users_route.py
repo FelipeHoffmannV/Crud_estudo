@@ -1,47 +1,30 @@
 # Imports flask methods and fake database
-from flask import Flask, Blueprint, render_template, request,redirect, url_for
-from database.fic_data import users
+from flask import Flask, Blueprint, render_template, request,redirect, url_for, jsonify
+from database.initdb import db
+from models.user import User
 
 user_route = Blueprint('user_route', __name__, template_folder='templates')
 
-# Show user route
+
+
+
+
 @user_route.route('/')
-def show_user():
+def index():
+    users = User.query.all()
     return render_template('index.html', users=users)
 
-
-# Add user route
 @user_route.route('/add', methods=['POST'])
-def add_user():
-    name = request.form['name']
-    email = request.form['email']
-    new_id = users[-1]['id'] + 1 if users else 1
-    user = {'id': new_id,
-            'name': name, 
-            'email': email,
-            }
-    users.append(user.copy())
-    print(users)
-    return redirect(url_for('user_route.show_user'))
+def addUser():
+    newUser = User(nome=request.form['name'], email=request.form['email'])
+    db.session.add(newUser)
+    db.session.commit()
+    return jsonify({"message": 'OK'})
 
+@user_route.route('/remove/<int:id>', methods=['DELETE'])
+def removerUser(id):
+    user = User.query.get_or_404(id)
+    db.session.delete(user)
+    db.session.commit()
+    return redirect('/')
 
-
-# Update user route
-@user_route.route('/update/<int:id>', methods=['POST'])
-def update_user(id):
-    for user in users:
-        if user['id'] == id:
-            user['name'] = request.form['name']
-            user['email'] = request.form['email']
-            break
-    return redirect(url_for('user_route.show_user'))
-
-
-
-# Remove user route
-@user_route.route('/remove/<int:id>')
-def remove_user(id):
-    for user in users:
-        if id == user['id']:
-            users.remove(user)  
-    return redirect(url_for('user_route.show_user'))
