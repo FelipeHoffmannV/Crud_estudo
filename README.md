@@ -1,101 +1,94 @@
-# 🧩 CRUD Flask - Banco de Dados Fictício  
+# 🧩 CRUD Flask - Banco de Dados Fictício
 
-Este projeto foi desenvolvido com o objetivo de **praticar os conceitos fundamentais de CRUD (Create, Read, Update, Delete)** usando o **framework Flask** em Python.  
-
-O sistema permite **cadastrar, listar, editar e remover usuários**, armazenando os dados em um **banco de dados fictício** baseado em **listas e dicionários**, sem o uso de um banco real.  
+Este projeto tem o objetivo de praticar os conceitos fundamentais de CRUD (Create, Read, Update, Delete) utilizando Flask em Python. Os dados são armazenados em um "banco de dados" fictício implementado com listas e dicionários — ideal para fins didáticos antes de migrar para um banco real.
 
 ---
 
-## 🚀 Funcionalidades
+## 🚀 O que o projeto faz
 
-- ✅ Adicionar novos usuários  
-- 📋 Listar usuários cadastrados  
-- ✏️ Editar nome e e-mail de um usuário específico  
-- 🗑️ Remover usuários da lista  
-- 🧠 Simulação de banco de dados com listas e dicionários  
-- 🧪 Testes automatizados com Pytest (incluindo delays visuais)
-
----
-
-## 🧱 Tecnologias utilizadas
-
-- [Python 3.12](https://www.python.org/)
-- [Flask](https://flask.palletsprojects.com/)
-- [Bootstrap 5](https://getbootstrap.com/)
-- [Font Awesome](https://fontawesome.com/)
-- [Pytest](https://docs.pytest.org/en/latest/)
+- Cadastrar novos usuários (nome e e-mail)
+- Listar usuários cadastrados
+- Editar um usuário existente
+- Remover usuários
+- Simulação de persistência em memória (listas/dicionários)
+- Testes automatizados com pytest
 
 ---
 
-## 📂 Estrutura do projeto
+## 🧱 Tecnologias
 
+- Python 3.12
+- Flask
+- Bootstrap 5 (front-end)
+- JavaScript (scripts de interação)
+- Pytest (testes)
+
+---
+
+## 📂 Estrutura do repositório
 
 Crud_estudo/
-│
-├── app.py # Arquivo principal do Flask
+├── app.py                 # Aplicação Flask (rotas e lógica)
 ├── database/
-│ └── fic_data.py # "Banco de dados" fictício
+│   └── fic_data.py        # "Banco de dados" em memória (listas/dicionários)
 ├── templates/
-│ └── index.html # Página principal
+│   └── index.html         # Página principal
 ├── static/
-│ └── javaScript.js # Script de apoio (edição, interação etc.)
+│   └── javaScript.js      # Scripts do front-end
 ├── tests/
-│ └── test_user_crud.py # Testes automatizados do CRUD
+│   └── test_user_crud.py  # Testes automatizados com pytest
 ├── README.md
 └── requirements.txt
 
 ---
 
-## ⚙️ Como rodar o projeto localmente
+## ⚙️ Como executar localmente
 
-### 
+1. Clone o repositório
 
-1️⃣ Clonar o repositório
+   git clone https://github.com/FelipeHoffmannV/Crud_estudo.git
+   cd Crud_estudo
 
-```bash
-git clone https://github.com/SEU_USUARIO/crud-flask-usuarios.git
-cd crud-flask-usuarios
+2. Crie e ative um ambiente virtual
 
-2️⃣ Criar e ativar um ambiente virtual
-python -m venv venv
-source venv/bin/activate   # Linux ou Mac
-venv\Scripts\activate      # Windows
+   python -m venv venv
+   source venv/bin/activate   # Linux / macOS
+   venv\Scripts\activate    # Windows
 
-3️⃣ Instalar as dependências
-pip install -r requirements.txt
+3. Instale dependências
 
-4️⃣ Rodar o servidor Flask
-python app.py
+   pip install -r requirements.txt
 
+4. Execute a aplicação
 
-Acesse no navegador:
-👉 http://127.0.0.1:5000/
+   python app.py
 
-🧪 Rodando os testes
+Acesse em: http://127.0.0.1:5000/
 
-Para rodar os testes automatizados (com delays visuais):
+---
 
-pytest -s -v
+## 🧪 Rodando os testes
 
+Para executar os testes com pytest:
 
-Saída esperada:
+   pytest -s -v
 
-🧩 Adding user...
-✅ User added successfully!
-🔄 Updating user...
-✅ Update complete!
-🗑️ Removing user...
-✅ All tests passed!
+Os testes cobrem o fluxo básico do CRUD (adicionar, listar, editar, remover).
 
-💡 Sobre o projeto
+---
 
-Este projeto tem fins educacionais e foi criado para praticar a lógica de back-end com Flask antes de trabalhar com bancos reais como SQLite ou PostgreSQL.
+## Observações
 
+- Este projeto usa armazenamento em memória: ao reiniciar a aplicação os dados são perdidos.
+- É recomendado migrar para um banco real (SQLite, PostgreSQL, etc.) para persistência duradoura.
 
-📜 Licença
+---
 
-Este projeto é livre para estudo, modificação e uso pessoal.
-Sinta-se à vontade para usar como base para seus próprios aprendizados!
+## Licença
 
-💻 Desenvolvido por Felipe Hoffmann
-📬 [https://www.linkedin.com/in/felipe-hoffmann-viana-8898b6329/]
+Uso livre para estudos e aprendizado.
+
+---
+
+Desenvolvido por Felipe Hoffmann
+https://www.linkedin.com/in/felipe-hoffmann-viana-8898b6329/
