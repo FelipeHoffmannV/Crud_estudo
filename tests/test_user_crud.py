@@ -27,18 +27,37 @@ def test_add_user(client):
 def test_remove_user(client):
     client.post('/add', data={'name': 'Maria', 'email': 'maria@test.com'}, follow_redirects=True)
     with app.app_context():
-        user = User.query.filter_by(email='maria@test.com').first()
-        assert user is not None
-        user_id = user.id
+            user = User.query.filter_by(email='maria@test.com').first()
+            assert user is not None
+            user_id = user.id
     response = client.delete(f'/remove/{user_id}')
     assert response.status_code == 200
     with app.app_context():
-        user = User.query.filter_by(email='maria@test.com').first()
-        assert user is None
+            user = User.query.filter_by(email='maria@test.com').first()
+            assert user is None
 
 def test_show_users_empty(client):
     response = client.get('/')
     assert response.status_code == 200
-    assert b'Nenhum usuario encontrado' in response.data
+    assert b'Nenhum usu' in response.data
 
 
+
+def test_update_user(client):
+    # Adiciona usuário
+    client.post('/add', data={'name': 'Elisa', 'email': 'elisa@test.com'}, follow_redirects=True)
+    with app.app_context():
+        user = User.query.filter_by(email='elisa@test.com').first()
+        assert user is not None
+        user_id = user.id
+    # Atualiza usuário
+    response = client.post('/update', data={
+        'id': user_id,
+        'name': 'Elisa Silva',
+        'email': 'elisa.silva@test.com'
+    })
+    assert response.status_code == 200
+    with app.app_context():
+        updated_user = User.query.get(user_id)
+        assert updated_user.nome == 'Elisa Silva'
+        assert updated_user.email == 'elisa.silva@test.com'

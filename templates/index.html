@@ -74,7 +74,7 @@
               <td>{{ user.nome }}</td>
               <td>{{ user.email }}</td>
               <td>
-              <form action="{{ url_for('user_route.removerUser', id=user.id) }}" method="post">
+              <form action="{{ url_for('user_route.remove_user', id=user.id) }}" method="post">
                 <input type="hidden" name="_method" value="DELETE">
                 <button class="btn btn-danger" onclick="remove({{ user.id }})" type="button">
                 <i class="fa-solid fa-trash"></i>
@@ -85,7 +85,7 @@
                 <button
                   class="btn btn-primary edit-btn"
                   data-id="{{ user.id }}"
-                  data-name="{{ user.name }}"
+                  data-name="{{ user.nome }}"
                   data-email="{{ user.email }}"
                   type="button"
                 >
@@ -104,9 +104,9 @@
         </table>
       </div>
 
-      <div class="edit_user_form" style="display: none; margin-top: 40px">
+      <div id="editContainer" class="edit_user_form" style="display: none; margin-top: 40px">
         <h3 class="text-primary">Edit User</h3>
-        <form id="editForm" method="POST" action="">
+        <form id="editForm" method="post" action="/update">
           <input type="hidden" id="edit_id" name="id" />
 
           <label for="edit_name" class="form-label">Name</label>
