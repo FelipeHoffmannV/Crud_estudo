@@ -7,6 +7,7 @@ Este projeto é um CRUD de usuários desenvolvido com **Flask** e **SQLAlchemy**
 
 ## 🚀 Funcionalidades
 
+<<<<<<< HEAD
 - ✅ Adicionar novos usuários
 - 📋 Listar usuários cadastrados
 - ✏️ Editar nome e e-mail de um usuário
@@ -20,7 +21,6 @@ Este projeto é um CRUD de usuários desenvolvido com **Flask** e **SQLAlchemy**
 
 - [Python 3.12+](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/)
-- [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [Pytest](https://docs.pytest.org/en/latest/)
@@ -48,6 +48,28 @@ Crud_estudo/
 │   └── index.html          # Página principal
 ├── tests/
 │   └── test_user_crud.py   # Testes automatizados
+=======
+- Python 3.12
+- Flask
+- Bootstrap 5 (front-end)
+- JavaScript (scripts de interação)
+- Pytest (testes)
+
+---
+
+## 📂 Estrutura do repositório
+
+Crud_estudo/
+├── app.py                 # Aplicação Flask (rotas e lógica)
+├── database/
+│   └── fic_data.py        # "Banco de dados" em memória (listas/dicionários)
+├── templates/
+│   └── index.html         # Página principal
+├── static/
+│   └── javaScript.js      # Scripts do front-end
+├── tests/
+│   └── test_user_crud.py  # Testes automatizados com pytest
+>>>>>>> 6197a6c50d9bcbd3d8457fe330061851128333d7
 ├── README.md
 └── LICENSE
 ```
