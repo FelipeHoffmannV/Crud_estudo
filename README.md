@@ -1,117 +1,121 @@
 
-# 🧩 CRUD Flask com SQLite
+# CRUD de Usuários com Flask, SQLAlchemy e SQLite
 
-Este projeto é um CRUD de usuários desenvolvido com **Flask** e **SQLAlchemy**, utilizando **SQLite** como banco de dados. O objetivo é praticar os conceitos fundamentais de CRUD (Create, Read, Update, Delete) em Python com persistência real de dados.
-
----
-
-## 🚀 Funcionalidades
-
-<<<<<<< HEAD
-- ✅ Adicionar novos usuários
-- 📋 Listar usuários cadastrados
-- ✏️ Editar nome e e-mail de um usuário
-- 🗑️ Remover usuários
-- 🗄️ Persistência de dados com SQLite
-- 🧪 Testes automatizados com Pytest
+Projeto profissional para gerenciamento de usuários utilizando **Flask** e **SQLAlchemy** com persistência em **SQLite**. Inclui interface web responsiva, rotas RESTful, testes automatizados e estrutura modular.
 
 ---
 
-## 🧱 Tecnologias utilizadas
+## Sumário
 
-- [Python 3.12+](https://www.python.org/)
-- [Flask](https://flask.palletsprojects.com/)
-- [Bootstrap 5](https://getbootstrap.com/)
-- [Font Awesome](https://fontawesome.com/)
-- [Pytest](https://docs.pytest.org/en/latest/)
+- [Visão Geral](#visão-geral)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Instalação](#instalação)
+- [Uso](#uso)
+- [Testes](#testes)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
 ---
 
-## 📂 Estrutura do projeto
+## Visão Geral
+
+Este sistema CRUD permite cadastrar, listar, editar e remover usuários, armazenando os dados em banco SQLite via SQLAlchemy. O projeto segue boas práticas de organização, separando modelos, rotas, templates e scripts estáticos.
+
+---
+
+## Funcionalidades
+
+- Adicionar novos usuários
+- Listar usuários cadastrados
+- Editar nome e e-mail de usuários
+- Remover usuários
+- Persistência de dados com SQLite
+- Interface web responsiva (Bootstrap)
+- Testes automatizados com Pytest
+
+---
+
+## Tecnologias
+
+- Python 3.12+
+- Flask
+- Flask-SQLAlchemy
+- Bootstrap 5
+- Font Awesome
+- Pytest
+
+---
+
+## Estrutura do Projeto
 
 ```
 Crud_estudo/
 │
-├── app.py                  # Arquivo principal do Flask
+├── app.py                  # Inicialização do Flask e registro de rotas
 ├── database/
 │   ├── db.sqlite3          # Banco de dados SQLite
 │   └── initdb.py           # Inicialização do banco
 ├── instance/
-│   └── db.sqlite3          # Banco de dados (pasta instance)
+│   └── db.sqlite3          # Banco de dados (alternativo)
 ├── models/
 │   └── user.py             # Modelo User
 ├── routes/
 │   └── users_route.py      # Rotas de usuário
 ├── static/
-│   └── javaScript.js       # Scripts JS
+│   └── javaScript.js       # Scripts JS para interação
 ├── templates/
 │   └── index.html          # Página principal
 ├── tests/
 │   └── test_user_crud.py   # Testes automatizados
-=======
-- Python 3.12
-- Flask
-- Bootstrap 5 (front-end)
-- JavaScript (scripts de interação)
-- Pytest (testes)
-
----
-
-## 📂 Estrutura do repositório
-
-Crud_estudo/
-├── app.py                 # Aplicação Flask (rotas e lógica)
-├── database/
-│   └── fic_data.py        # "Banco de dados" em memória (listas/dicionários)
-├── templates/
-│   └── index.html         # Página principal
-├── static/
-│   └── javaScript.js      # Scripts do front-end
-├── tests/
-│   └── test_user_crud.py  # Testes automatizados com pytest
->>>>>>> 6197a6c50d9bcbd3d8457fe330061851128333d7
 ├── README.md
 └── LICENSE
 ```
 
 ---
 
-## ⚙️ Como rodar o projeto localmente
+## Instalação
 
-1️⃣ Clone o repositório
+1. Clone o repositório:
 
-```bash
-git clone https://github.com/SEU_USUARIO/crud-flask-usuarios.git
-cd crud-flask-usuarios
-```
+	```bash
+	git clone https://github.com/SEU_USUARIO/crud-flask-usuarios.git
+	cd crud-flask-usuarios
+	```
 
-2️⃣ Crie e ative um ambiente virtual
+2. Crie e ative um ambiente virtual:
 
-```bash
-python -m venv venv
-venv\Scripts\activate      # Windows
-# ou
-source venv/bin/activate   # Linux/Mac
-```
+	```bash
+	python -m venv venv
+	venv\Scripts\activate      # Windows
+	# ou
+	source venv/bin/activate   # Linux/Mac
+	```
 
-3️⃣ Instale as dependências
+3. Instale as dependências:
 
-```bash
-pip install flask flask_sqlalchemy pytest
-```
-
-4️⃣ Rode o servidor Flask
-
-```bash
-python app.py
-```
-
-Acesse no navegador:
-👉 http://127.0.0.1:5000/
+	```bash
+	pip install flask flask_sqlalchemy pytest
+	```
 
 ---
 
-## 🧪 Rodando os testes
+## Uso
+
+1. Execute o servidor Flask:
+
+	```bash
+	python app.py
+	```
+
+2. Acesse a aplicação em:
+
+	[http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+
+---
+
+## Testes
 
 Para rodar os testes automatizados:
 
@@ -119,7 +123,30 @@ Para rodar os testes automatizados:
 pytest -s -v
 ```
 
+Os testes cobrem as principais operações do CRUD e exibem mensagens de progresso.
+
 ---
+
+## Contribuição
+
+Contribuições são bem-vindas! Para contribuir:
+
+1. Fork este repositório
+2. Crie uma branch com sua feature (`git checkout -b minha-feature`)
+3. Commit suas alterações (`git commit -m 'Minha feature'`)
+4. Faça o push para o GitHub (`git push origin minha-feature`)
+5. Abra um Pull Request
+
+---
+
+## Licença
+
+Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+
+---
+
+Desenvolvido por Felipe Hoffmann
+[LinkedIn](https://www.linkedin.com/in/felipe-hoffmann-viana-8898b6329/)
 
 ## 💡 Sobre o projeto
 

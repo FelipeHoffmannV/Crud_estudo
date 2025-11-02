@@ -74,7 +74,7 @@
               <td>{{ user.nome }}</td>
               <td>{{ user.email }}</td>
               <td>
-              <form action="{{ url_for('user_route.removerUser', id=user.id) }}" method="POST">
+              <form action="{{ url_for('user_route.removerUser', id=user.id) }}" method="post">
                 <input type="hidden" name="_method" value="DELETE">
                 <button class="btn btn-danger" onclick="remove({{ user.id }})" type="button">
                 <i class="fa-solid fa-trash"></i>

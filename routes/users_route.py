@@ -19,12 +19,14 @@ def addUser():
     newUser = User(nome=request.form['name'], email=request.form['email'])
     db.session.add(newUser)
     db.session.commit()
-    return jsonify({"message": 'OK'})
+    return redirect('/')
 
 @user_route.route('/remove/<int:id>', methods=['DELETE'])
 def removerUser(id):
     user = User.query.get_or_404(id)
+    if not user:
+        return jsonify({"message": "Usuário não encontrado"}), 404
     db.session.delete(user)
     db.session.commit()
-    return redirect('/')
+    return jsonify({"message": "Usuário removido com sucesso!"})
 
