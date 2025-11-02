@@ -1,26 +1,26 @@
-# 🧩 CRUD Flask - Banco de Dados Fictício  
 
-Este projeto foi desenvolvido com o objetivo de **praticar os conceitos fundamentais de CRUD (Create, Read, Update, Delete)** usando o **framework Flask** em Python.  
+# 🧩 CRUD Flask com SQLite
 
-O sistema permite **cadastrar, listar, editar e remover usuários**, armazenando os dados em um **banco de dados fictício** baseado em **listas e dicionários**, sem o uso de um banco real.  
+Este projeto é um CRUD de usuários desenvolvido com **Flask** e **SQLAlchemy**, utilizando **SQLite** como banco de dados. O objetivo é praticar os conceitos fundamentais de CRUD (Create, Read, Update, Delete) em Python com persistência real de dados.
 
 ---
 
 ## 🚀 Funcionalidades
 
-- ✅ Adicionar novos usuários  
-- 📋 Listar usuários cadastrados  
-- ✏️ Editar nome e e-mail de um usuário específico  
-- 🗑️ Remover usuários da lista  
-- 🧠 Simulação de banco de dados com listas e dicionários  
-- 🧪 Testes automatizados com Pytest (incluindo delays visuais)
+- ✅ Adicionar novos usuários
+- 📋 Listar usuários cadastrados
+- ✏️ Editar nome e e-mail de um usuário
+- 🗑️ Remover usuários
+- 🗄️ Persistência de dados com SQLite
+- 🧪 Testes automatizados com Pytest
 
 ---
 
 ## 🧱 Tecnologias utilizadas
 
-- [Python 3.12](https://www.python.org/)
+- [Python 3.12+](https://www.python.org/)
 - [Flask](https://flask.palletsprojects.com/)
+- [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [Pytest](https://docs.pytest.org/en/latest/)
@@ -29,73 +29,87 @@ O sistema permite **cadastrar, listar, editar e remover usuários**, armazenando
 
 ## 📂 Estrutura do projeto
 
-
+```
 Crud_estudo/
 │
-├── app.py # Arquivo principal do Flask
+├── app.py                  # Arquivo principal do Flask
 ├── database/
-│ └── fic_data.py # "Banco de dados" fictício
-├── templates/
-│ └── index.html # Página principal
+│   ├── db.sqlite3          # Banco de dados SQLite
+│   └── initdb.py           # Inicialização do banco
+├── instance/
+│   └── db.sqlite3          # Banco de dados (pasta instance)
+├── models/
+│   └── user.py             # Modelo User
+├── routes/
+│   └── users_route.py      # Rotas de usuário
 ├── static/
-│ └── javaScript.js # Script de apoio (edição, interação etc.)
+│   └── javaScript.js       # Scripts JS
+├── templates/
+│   └── index.html          # Página principal
 ├── tests/
-│ └── test_user_crud.py # Testes automatizados do CRUD
+│   └── test_user_crud.py   # Testes automatizados
 ├── README.md
-└── requirements.txt
+└── LICENSE
+```
 
 ---
 
 ## ⚙️ Como rodar o projeto localmente
 
-### 
-
-1️⃣ Clonar o repositório
+1️⃣ Clone o repositório
 
 ```bash
 git clone https://github.com/SEU_USUARIO/crud-flask-usuarios.git
 cd crud-flask-usuarios
+```
 
-2️⃣ Criar e ativar um ambiente virtual
+2️⃣ Crie e ative um ambiente virtual
+
+```bash
 python -m venv venv
-source venv/bin/activate   # Linux ou Mac
 venv\Scripts\activate      # Windows
+# ou
+source venv/bin/activate   # Linux/Mac
+```
 
-3️⃣ Instalar as dependências
-pip install -r requirements.txt
+3️⃣ Instale as dependências
 
-4️⃣ Rodar o servidor Flask
+```bash
+pip install flask flask_sqlalchemy pytest
+```
+
+4️⃣ Rode o servidor Flask
+
+```bash
 python app.py
-
+```
 
 Acesse no navegador:
 👉 http://127.0.0.1:5000/
 
-🧪 Rodando os testes
+---
 
-Para rodar os testes automatizados (com delays visuais):
+## 🧪 Rodando os testes
 
+Para rodar os testes automatizados:
+
+```bash
 pytest -s -v
+```
 
+---
 
-Saída esperada:
+## 💡 Sobre o projeto
 
-🧩 Adding user...
-✅ User added successfully!
-🔄 Updating user...
-✅ Update complete!
-🗑️ Removing user...
-✅ All tests passed!
+Este projeto tem fins educacionais e serve para praticar a lógica de back-end com Flask e persistência de dados com SQLite.
 
-💡 Sobre o projeto
+---
 
-Este projeto tem fins educacionais e foi criado para praticar a lógica de back-end com Flask antes de trabalhar com bancos reais como SQLite ou PostgreSQL.
-
-
-📜 Licença
+## 📜 Licença
 
 Este projeto é livre para estudo, modificação e uso pessoal.
-Sinta-se à vontade para usar como base para seus próprios aprendizados!
+
+---
 
 💻 Desenvolvido por Felipe Hoffmann
 📬 [https://www.linkedin.com/in/felipe-hoffmann-viana-8898b6329/]
